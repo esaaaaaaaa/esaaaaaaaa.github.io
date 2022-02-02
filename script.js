@@ -170,7 +170,7 @@ window.onload = function () {
         JSON.stringify({
           op: 2,
           d: {
-            subscribe_to_id: "878694140525809714",
+            subscribe_to_id: "280696584889696257",
           },
         })
       );
@@ -196,7 +196,7 @@ window.onload = function () {
         $('.hreff').attr("href", `https://open.spotify.com/track/${user.spotify.track_id}`);
         let spotifyElapsedDurationUpdateInterval;
         async function refreshPresence() {
-          const presence = (await fetch("https://api.lanyard.rest/v1/users/878694140525809714").then(_res => _res.json()).catch(() => null))?.data;
+          const presence = (await fetch("https://api.lanyard.rest/v1/users/280696584889696257").then(_res => _res.json()).catch(() => null))?.data;
           if (!presence) return;
           const spotifyPresence = presence.activities.find(_activity => _activity.name === "Spotify");    
           const totalDuration = spotifyPresence.timestamps.end - spotifyPresence.timestamps.start;
