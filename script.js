@@ -155,7 +155,7 @@ window.onload = function () {
     $('.time').text(datetime);
   }, 1000);
 
-  fetch('https://api.openweathermap.org/data/2.5/weather?q=Erzincan&units=metric&appid=cb73766baef14a4d2bf9e254babe70c5').then(function (response) {
+  fetch('https://api.openweathermap.org/data/2.5/weather?q=Istanbul&units=metric&appid=cb73766baef14a4d2bf9e254babe70c5').then(function (response) {
   return response.json();
   }).then(function (data) {
   $(".weather").html(`It's currently ${data.main.temp.toFixed()} °C <span style="font-size: .75rem; line-height: 1rem;">(${data.weather[0].description})</span> in <a class="canimsin" href="https://weather.com/en-GB/weather/today/l/4da4ce74102549787fb7ec57bb522868d2008f7c99f6fe29e9b3cbe2c5a315ca" target="_blank">${data.name}.</a>`)
