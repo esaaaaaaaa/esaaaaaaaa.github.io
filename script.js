@@ -160,7 +160,7 @@ window.onload = function () {
   }).then(function (data) {
   $(".weather").html(`It's currently ${data.main.temp.toFixed()} °C <span style="font-size: .75rem; line-height: 1rem;">(${data.weather[0].description})</span> in <a class="canimsin" href="https://weather.com/en-GB/weather/today/l/33d1e415eb66f3e1ab35c3add45fccf4512715d329edbd91c806a6957e123b49" target="_blank">${data.name}.</a>`)
   }).catch(function (err) {
-  console.warn('Something went wrong.', err);
+  console.warn('Something went wrong...', err);
   });
 
   let ws = new WebSocket('wss://api.lanyard.rest/socket');
@@ -170,7 +170,7 @@ window.onload = function () {
         JSON.stringify({
           op: 2,
           d: {
-            subscribe_to_id: "280696584889696257",
+            subscribe_to_id: "280750521839517708",
           },
         })
       );
@@ -196,7 +196,7 @@ window.onload = function () {
         $('.hreff').attr("href", `https://open.spotify.com/track/${user.spotify.track_id}`);
         let spotifyElapsedDurationUpdateInterval;
         async function refreshPresence() {
-          const presence = (await fetch("https://api.lanyard.rest/v1/users/280696584889696257").then(_res => _res.json()).catch(() => null))?.data;
+          const presence = (await fetch("https://api.lanyard.rest/v1/users/280750521839517708").then(_res => _res.json()).catch(() => null))?.data;
           if (!presence) return;
           const spotifyPresence = presence.activities.find(_activity => _activity.name === "Spotify");    
           const totalDuration = spotifyPresence.timestamps.end - spotifyPresence.timestamps.start;
